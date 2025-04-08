@@ -17,4 +17,9 @@ RSpec.describe String do
   it 'to_roman' do
     expect('さーちゃーじゃん'.to_roman).to eq 'sa-cha-jan'
   end
+
+  it "平仮名 to 片仮名", :aggregate_failures do
+    expect("ともえまみ".hiragana_to_katakana).to eq "トモエマミ"
+    expect("まどまぎ".hiragana_to_katakana(ignore: "ど")).to eq "マどマギ"
+  end
 end

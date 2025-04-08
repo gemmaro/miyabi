@@ -1,7 +1,18 @@
+require "set"
+
 module Miyabi
   module FormatString
-    def hiragana_to_katakana
-      tr('ぁ-ん', 'ァ-ン')
+    def hiragana_to_katakana(ignore: nil)
+      ignored = ignore ? ignore.chars.to_set : Set[]
+      result = +""
+      chars.each do |char|
+        if ignored.member?(char)
+          result << char
+        else
+          result << char.tr('ぁ-ん', 'ァ-ン')
+        end
+      end
+      result
     end
 
     alias to_kana hiragana_to_katakana
