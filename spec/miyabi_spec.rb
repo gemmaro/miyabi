@@ -7,6 +7,19 @@ RSpec.describe Miyabi do
 end
 
 RSpec.describe String do
+  let(:hiragana) {
+    'ぁあぃいぅうぇえぉおかがきぎくぐけげこごさざしじすずせぜそぞた' \
+    'だちぢっつづてでとどなにぬねのはばぱひびぴふぶぷへべぺほぼぽま' \
+    'みむめもゃやゅゆょよらりるれろわをんーゎゐゑゕゖゔゝゞ・「」。、' }
+  let(:full_katakana) {
+    'ァアィイゥウェエォオカガキギクグケゲコゴサザシジスズセゼソゾタ' \
+    'ダチヂッツヅテデトドナニヌネノハバパヒビピフブプヘベペホボポマ' \
+    'ミムメモャヤュユョヨラリルレロワヲンーヮヰヱヵヶヴヽヾ・「」。、' }
+
+  def chunks(str)
+    str.chars.each_slice(5).map(&:join)
+  end
+
   it 'to_kanhira' do
     ENV["ONLINE"] or skip "offline"
     require "miyabi/format_string_online"
@@ -21,5 +34,8 @@ RSpec.describe String do
   it "平仮名 to 片仮名", :aggregate_failures do
     expect("ともえまみ".hiragana_to_katakana).to eq "トモエマミ"
     expect("まどまぎ".hiragana_to_katakana(ignore: "ど")).to eq "マどマギ"
+    chunks(hiragana).zip(chunks(full_katakana)).each do |hchunk, kchunk|
+      expect(hchunk.hiragana_to_katakana).to eq kchunk
+    end
   end
 end

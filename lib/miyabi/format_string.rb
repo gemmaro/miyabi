@@ -9,7 +9,7 @@ module Miyabi
         if ignored.member?(char)
           result << char
         else
-          result << char.tr('ぁ-ん', 'ァ-ン')
+          result << char.tr(TR_HIRAGANA, TR_KATAKANA)
         end
       end
       result
@@ -19,11 +19,17 @@ module Miyabi
     alias to_katakana hiragana_to_katakana
 
     def katakana_to_hiragana
-      tr('ァ-ン', 'ぁ-ん')
+      tr(TR_KATAKANA, TR_HIRAGANA)
     end
 
     alias to_hira katakana_to_hiragana
     alias to_hiragana katakana_to_hiragana
+
+    TR_HIRAGANA = 'ぁ-んゔゕゖゝゞ'
+    private_constant :TR_HIRAGANA
+
+    TR_KATAKANA = 'ァ-ンヴヵヶヽヾ'
+    private_constant :TR_KATAKANA
 
     def to_roman
       s = hiragana_to_katakana
