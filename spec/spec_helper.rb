@@ -1,4 +1,4 @@
-require 'bundler/setup'
+$LOAD_PATH << File.join(__dir__, "../lib")
 require 'miyabi'
 
 RSpec.configure do |config|
