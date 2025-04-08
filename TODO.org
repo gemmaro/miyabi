@@ -1,0 +1,2 @@
+* TODO jaconvを参考にする
+https://github.com/ikegami-yukino/jaconv/blob/b82abca9d8e29c3cad33825926900bea6c7e170f/test_jaconv.py#L44
