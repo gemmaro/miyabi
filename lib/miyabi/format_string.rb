@@ -11,20 +11,22 @@ module Miyabi
       Nokogiri::HTML(html).search('#yomikata tbody tr td').first.inner_text
     end
 
-    def to_kana
+    def hiragana_to_katakana
       tr('ぁ-ん', 'ァ-ン')
     end
 
-    alias to_katakana to_kana
+    alias to_kana hiragana_to_katakana
+    alias to_katakana hiragana_to_katakana
 
-    def to_hira
+    def katakana_to_hiragana
       tr('ァ-ン', 'ぁ-ん')
     end
 
-    alias to_hiragana to_hira
+    alias to_hira katakana_to_hiragana
+    alias to_hiragana katakana_to_hiragana
 
     def to_roman
-      s = to_kana
+      s = hiragana_to_katakana
       KATAKANA_TO_ROMAN_MAPPING.each do |kana, roman|
         s.gsub!(kana, roman)
       end
