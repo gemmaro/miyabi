@@ -1,16 +1,5 @@
-require 'net/http'
-require 'nokogiri'
-
 module Miyabi
   module FormatString
-    def to_kanhira
-      http = Net::HTTP.new('yomikatawa.com', 443)
-      http.use_ssl = true
-      path = File.join('/kanji', self)
-      html = http.get(path).body
-      Nokogiri::HTML(html).search('#yomikata tbody tr td').first.inner_text
-    end
-
     def hiragana_to_katakana
       tr('ぁ-ん', 'ァ-ン')
     end

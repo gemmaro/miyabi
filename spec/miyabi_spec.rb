@@ -8,6 +8,9 @@ end
 
 RSpec.describe String do
   it 'to_kanhira' do
+    ENV["ONLINE"] or skip "offline"
+    require "miyabi/format_string_online"
+    String.include(Miyabi::FormatStringOnline)
     expect('漢字'.to_kanhira).to eq 'かんじ'
   end
 

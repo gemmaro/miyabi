@@ -9,6 +9,13 @@ The format is based on [Keep a Changelog][cl], and this project adheres to [Sema
 
 ## [Unreleased]
 
+Make `to_kanhira` method optional.  If you still need this, install Nokogiri gem and:
+
+```ruby
+require "miyabi/format_string_online"
+String.include(Miyabi::FormatStringOnline)
+```
+
 ## 0.3.1
 
 This is a maintenance release.
