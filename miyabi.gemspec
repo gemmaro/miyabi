@@ -5,12 +5,12 @@ require 'miyabi/version'
 Gem::Specification.new do |spec|
   spec.name          = 'miyabi'
   spec.version       = Miyabi::VERSION
-  spec.authors       = ['Hironori Akaishi']
-  spec.email         = ['ah.gm3622@gmail.com']
+  spec.authors       = ['Hironori Akaishi', 'gemmaro']
+  spec.email         = ['ah.gm3622@gmail.com', 'gemmaro.dev@gmail.com']
 
   spec.summary       = 'kana,hira,kanji formatter'
   spec.description   = 'Format Japanese characters'
-  spec.homepage      = 'https://github.com/isy/miyabi'
+  spec.homepage      = 'https://github.com/gemmaro/miyabi'
   spec.license       = 'MIT'
   spec.metadata['rubygems_mfa_required'] = 'true'
 
