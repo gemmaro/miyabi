@@ -157,5 +157,17 @@ module Miyabi
       }
 
     private_constant :KATAKANA_TO_ROMAN_MAPPING
+
+    def roman_to_katakana
+      str = dup
+      ROMAN_TO_KATAKANA_MAPPING.each do |roman, kana|
+        str.gsub!(kana, roman)
+      end
+      str
+    end
+
+    ROMAN_TO_KATAKANA_MAPPING = KATAKANA_TO_ROMAN_MAPPING.invert
+
+    private_constant :ROMAN_TO_KATAKANA_MAPPING
   end
 end
