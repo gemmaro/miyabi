@@ -1,2 +1,5 @@
-(use-modules (gnu packages ruby))
+(use-modules (gnu packages ruby)
+             (gnu packages ruby-xyz)
+             (gnu packages ruby-check)
+             (guix profiles))
 (packages->manifest (list ruby-nokogiri ruby-rspec ruby-3.1 ruby-rubocop))
