@@ -10,3 +10,7 @@ module Miyabi::FormatStringOnline
     Nokogiri::HTML(html).search('#yomikata tbody tr td').first.inner_text
   end
 end
+
+module Miyabi
+  deprecate_constant :FormatStringOnline
+end
