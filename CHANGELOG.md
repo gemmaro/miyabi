@@ -9,6 +9,10 @@ The format is based on [Keep a Changelog][cl], and this project adheres to [Sema
 
 ## [Unreleased]
 
+## 0.4.1
+
+Maintenance release.  Mainly for enabling trusted publishing.
+
 ## 0.4.0
 
 Make `to_kanhira` method optional.  If you still need this, install Nokogiri gem and:
