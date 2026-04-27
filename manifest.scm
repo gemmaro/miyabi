@@ -2,4 +2,4 @@
              (gnu packages ruby-xyz)
              (gnu packages ruby-check)
              (guix profiles))
-(packages->manifest (list ruby-nokogiri ruby-rspec ruby-3.1 ruby-rubocop))
+(packages->manifest (list ruby-nokogiri ruby-rspec ruby-3.3 ruby-rubocop))
