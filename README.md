@@ -69,6 +69,8 @@ Everyone interacting in the Miyabi project’s codebases, issue trackers, chat
 rooms and mailing lists is expected to follow the [code of
 conduct](https://github.com/gemmaro/miyabi/blob/master/CODE_OF_CONDUCT.md).
 
-## Related Works
+## Links and Related Works
 
-[jaconv](https://github.com/ikegami-yukino/jaconv) (Python library)
+This work has been initially created by isy at [isy/miyabi](https://github.com/isy/miyabi).
+
+There are other similar libraries such as [jaconv](https://github.com/ikegami-yukino/jaconv) (Python library).
